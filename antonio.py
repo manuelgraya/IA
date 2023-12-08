@@ -9,16 +9,16 @@ def suma():
 #crea una funcion que reciba un numero y devuelva su factorial
 
 def factorial():
-    num = int(input("Ingrese un numero: "))
-    factorial = 1
-    for i in range(1, num+1):
-        factorial = factorial * i
-    return factorial
+    for n in range(1, 21):
+        result = 1
+        for i in range(1, n+1):
+            result *= i
+        print(f"El factorial de {n} es: {result}")
 
 #crea la funcion main que ejecute las funciones anteriores
 def main():
-    print("Su suma es: ", suma())
-    print(factorial())
+    print("Su suma es: ",suma())
+    factorial()
 
 if __name__ == "__main__":
     main()

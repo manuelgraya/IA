@@ -23,8 +23,9 @@ class tEstado:
 def estadoInicial() -> tEstado:
     puzle_inicial = np.array(
     [
-        [0, 1], 
-        [2, 3]
+        [1, 0, 3], 
+        [8, 2, 4],
+        [7, 6, 5]
     ])
     return tEstado(puzle_inicial)
 
@@ -32,8 +33,9 @@ def estadoInicial() -> tEstado:
 def estadoObjetivo() -> tEstado:
     puzle_final = np.array(
     [
-        [1, 3], 
-        [0, 2]
+        [1, 2, 3], 
+        [8, 0, 4],
+        [7, 6, 5]
     ])
     return tEstado(puzle_final)
 

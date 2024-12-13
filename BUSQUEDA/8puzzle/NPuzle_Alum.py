@@ -18,6 +18,9 @@ class tEstado:
 
     def __repr__(self) -> str: # Permite representar el objeto como cadena
         return f"{self.tablero}\n Fila: {self.fila}\n Col: {self.col}\n"
+    
+    def hash(self) -> str:
+        return str(self.tablero.tobytes())
 
 
 def estadoInicial() -> tEstado:
@@ -115,4 +118,3 @@ def aplicaOperador(operador: str, estado: tEstado) -> tEstado:
            
     
     return nuevo
-

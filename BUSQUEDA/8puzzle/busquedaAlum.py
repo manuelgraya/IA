@@ -10,7 +10,10 @@ class Nodo:
     costeCamino: int
     profundidad: int
     padre: Nodo
+    # funcion_eval: int = 0
 
+    # def __lt__(self, other: Nodo) -> bool:
+    #     return self.funcion_eval < other.funcion_eval
 
 def nodoInicial() -> Nodo:
     return Nodo(estadoInicial(), None, 0, 0, None)

@@ -103,13 +103,12 @@ def utilidad(nodo: Nodo) -> int:
                 
     # Comprobamos si hay 4 en raya en diagonal
     contador = 0
-    posicion_ultima_ficha = copia.ultima_ficha
-    diagonal_izquierda = calcular_diagonal_izquierda(posicion_ultima_ficha)
-    diagonal_derecha = calcular_diagonal_derecha(posicion_ultima_ficha)
+    diagonal_izquierda = calcular_diagonal_izquierda(copia.ultima_ficha)
+    diagonal_derecha = calcular_diagonal_derecha(copia.ultima_ficha)
     
-    # Comprobamos la diagonal derecha
+    # Comprobamos la diagonal izquierda
     rango = 7-diagonal_izquierda[0]
-    if diagonal_izquierda[0] < 4 and diagonal_izquierda[0]>=0:
+    if diagonal_izquierda[0] < 4 and diagonal_izquierda[1]< 5:
         for i in range(rango):
             if copia.tablero[diagonal_izquierda[0]+i, diagonal_izquierda[1]+i] == jugador:
                 contador += 1
@@ -118,10 +117,12 @@ def utilidad(nodo: Nodo) -> int:
             else:
                 contador = 0
     
-    # Comprobamos la diagonal izquierda
-    if diagonal_izquierda[0] < 4 and diagonal_izquierda[0]>=0:
+    # Comprobamos la diagonal derecha
+    # valores_no_permitidos = [(6,7),(5,7),(4,7),(0,0),(0,1),(0,2)]
+    # if diagonal_derecha not in valores_no_permitidos:
+    if diagonal_izquierda[0] < 4 and diagonal_izquierda[1]>2:
         for i in range(rango):
-            if copia.tablero[diagonal_izquierda[0]+i, diagonal_izquierda[1]-i] == jugador:
+            if copia.tablero[diagonal_derecha[0]+i, diagonal_derecha[1]-i] == jugador:
                 contador += 1
                 if contador == 4:
                     return jugador*100

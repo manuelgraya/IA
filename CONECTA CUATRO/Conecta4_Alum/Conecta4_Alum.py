@@ -105,7 +105,7 @@ def utilidad(nodo: Nodo) -> int:
     contador = 0
     diagonal_izquierda = calcular_diagonal_izquierda(copia.ultima_ficha)
     diagonal_derecha = calcular_diagonal_derecha(copia.ultima_ficha)
-    
+      
     # Comprobamos la diagonal izquierda
     rango = 7-diagonal_izquierda[0]
     if diagonal_izquierda[0] < 4 and diagonal_izquierda[1]< 5:
